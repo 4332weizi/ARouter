@@ -1,8 +1,8 @@
-## English version is being re-translated, coming soon...
+```
+    一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦
+```
 
-```
-    Android平台中对页面、服务提供路由功能的中间件，我的目标是 —— 简单且够用。
-```
+[English](https://raw.githubusercontent.com/alibaba/ARouter/master/README.md)
 
 ##### [![Join the chat at https://gitter.im/alibaba/ARouter](https://badges.gitter.im/alibaba/ARouter.svg)](https://gitter.im/alibaba/ARouter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -232,24 +232,16 @@ public class TestInterceptor implements IInterceptor {
 // 使用带Callback参数的navigation方法，可以获取单次跳转的结果
 ARouter.getInstance().build("/test/1").navigation(this, new NavigationCallback() {
     @Override
-    public void onFound(Postcard postcard) {
-        Log.d("ARouter", "找到了");
-    }
-
-    @Override
-    public void onLost(Postcard postcard) {
-        Log.d("ARouter", "找不到了");
-    }
+    public void onFound(Postcard postcard) { ... }
     
     @Override
-    public void onArrival(Postcard postcard) {
-        Log.d("ARouter", "跳转完了");
-    }
-
+    public void onLost(Postcard postcard) { ... }
+    
     @Override
-    public void onFound(Postcard postcard) {
-        Log.d("ARouter", "被拦截了");
-    }
+    public void onArrival(Postcard postcard) { ... }
+    
+    @Override
+    public void onFound(Postcard postcard) { ... }
 });
 // 或
 ARouter.getInstance().build("/test/1").navigation(this, 
